@@ -1,4 +1,5 @@
 {
     "java.dependency.showMembers": true,
-    "java.code.generators.methodOpeningBraceOnNewLine": true
+    "java.code.generators.methodOpeningBraceOnNewLine": true,
+    "java.configuration.updateBuildConfiguration": "automatic"
 }

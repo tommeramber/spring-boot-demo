@@ -1,0 +1,44 @@
+mvn -> install
+cd target
+java -jar <file>
+
+git config --global user.name "tommer"
+git config --global user.name "tamber@gmail.com"
+
+##in project dir
+git init
+git status
+
+git add *
+git status
+git commit -m "before postgresql"
+git status
+git log
+
+##go back to that commit:
+## hash of specific commit (git log)
+git checout 764950c2316174f015252a15b5d4d1d3ede9411f 
+
+
+
+---------------------------
+//list branches
+git branch 
+
+//create new
+git branch <new branch name>
+
+//move to branch
+git checkout <branch name>
+
+// merge into current branch
+git merge <secondery branch>
+----------------------------
+
+git branch "with_postgresql"
+git checkout with_postgresql
+git add .
+git commit -m 'start'
+
+
+
