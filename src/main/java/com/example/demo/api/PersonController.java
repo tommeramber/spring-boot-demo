@@ -1,6 +1,7 @@
 package com.example.demo.api;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.validation.Valid;
@@ -44,7 +45,7 @@ public class PersonController {
 
     @GetMapping(path = "{id}")
     public Person getPersonById(@PathVariable("id") UUID id) {
-        return personService.getPersonById(id).orElse(null);
+        return personService.getPersonById(id).orElseThrow(()->new IllegalStateException("No person with id "+id));
     }
 
     @DeleteMapping(path = "{id}")
