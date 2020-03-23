@@ -1,5 +1,6 @@
 package com.example.demo.model;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import javax.validation.constraints.NotBlank;
@@ -24,4 +25,8 @@ public class Person {
     public String getName() {
         return this.name;
     }
+
+	public Optional<Person> orElse(Object object) {
+		return null;
+	}
 }

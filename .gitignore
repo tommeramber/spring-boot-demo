@@ -1,0 +1,16 @@
+target/classes/com/example/demo/DemoTommerApplication.class
+target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst
+target/surefire-reports/com.example.demo.DemoTommerApplicationTests.txt
+target/surefire-reports/TEST-com.example.demo.DemoTommerApplicationTests.xml
+target/test-classes/com/example/demo/DemoTommerApplicationTests.class
+target/classes/com/example/demo/model/Person.class
+target/classes/com/example/demo/service/PersonService.class
+target/classes/com/example/demo/datasource/PostgresDatasource.class
+target/classes/com/example/demo/dao/PersonDataAccessService.class
+target/classes/com/example/demo/dao/PersonDao.class
+target/classes/com/example/demo/dao/FakePersonDataAccessService.class
+target/classes/com/example/demo/api/PersonController.class
+target/classes/com/example/demo/DemoTommerApplication.class
+target
+src/main/java/com/example/demo/api/PersonController.java
+.gitignore
