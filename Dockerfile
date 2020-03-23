@@ -1,5 +1,4 @@
-#FROM registry.redhat.io/openjdk/openjdk-11-rhel8
-FROM openjdk-11-rhel8
+FROM registry.redhat.io/openjdk/openjdk-11-rhel8
 WORKDIR /
 COPY target/ .
 EXPOSE 8080
