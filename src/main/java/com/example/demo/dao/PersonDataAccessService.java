@@ -1,7 +1,5 @@
 package com.example.demo.dao;
 
-import static java.util.Optional.ofNullable;
-
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -10,7 +8,6 @@ import com.example.demo.model.Person;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 @Repository("postgresql")
