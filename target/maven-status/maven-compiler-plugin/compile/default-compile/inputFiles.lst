@@ -1,7 +1,7 @@
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/DemoTommerApplication.java
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/model/Person.java
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/dao/PersonDao.java
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/service/PersonService.java
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/api/PersonController.java
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/datasource/PostgresDatasource.java
-/home/tamber/Documents/LAB/Spring-app/spring-boot-demo/src/main/java/com/example/demo/dao/PersonDataAccessService.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/api/PersonController.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/model/Person.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/service/PersonService.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/dao/PersonDataAccessService.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/dao/PersonDao.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/DemoTommerApplication.java
+/home/tamber/tamber/bin/LAB/spring-boot-demo/src/main/java/com/example/demo/datasource/PostgresDatasource.java
