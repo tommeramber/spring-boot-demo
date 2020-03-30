@@ -41,6 +41,12 @@
 		</dependency>
 
 		<dependency>
+    		<groupId>org.keycloak</groupId>
+    		<artifactId>keycloak-spring-boot-starter</artifactId>
+    		<version>9.0.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
@@ -50,6 +56,8 @@
 			<groupId>org.flywaydb</groupId>
 			<artifactId>flyway-core</artifactId>
 		</dependency>
+
+			
 	</dependencies>
 
 	<build>

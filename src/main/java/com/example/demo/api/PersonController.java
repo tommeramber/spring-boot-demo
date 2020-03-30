@@ -47,7 +47,7 @@ public class PersonController {
         return personService.getPersonById(id).orElseThrow(()->new IllegalStateException("No person with id "+id));
     }
 
-    @DeleteMapping(path = "{id}")
+    @DeleteMapping(path = "/api/v1/delete/{id}")
     public void deletePerson(@PathVariable("id") UUID id) {
         personService.deletePerson(id);
     }
