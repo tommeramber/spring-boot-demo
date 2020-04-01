@@ -24,22 +24,35 @@ app:
 
 # DB_USERNAME ==> "postgres" , Will be saved in Secret
 # DB_PASSWORD ==> "mypass" , Will be saved in Secret
+
 keycloak:
-  auth-server-url: http:${SSO_URL}
-  realm: ${SSO_REALM}
-  resource: ${SSO_CLIENT_NAME}
-  public-client: true
-  credentials.secret: ${SSO_CLIENT_SECRET}
-  security-constraints[0].securityCollections[0].name: "semi secured methods"
-  security-constraints[0].securityCollections[0].authRoles[0]: USER
-  security-constraints[0].securityCollections[0].patterns[0]: /api/v1/person/*
-  security-constraints[0].securityCollections[1].name: "very secured methods"
-  security-constraints[0].securityCollections[1].authRoles[0]: ADMIN
-  security-constraints[0].securityCollections[1].patterns[0]: /api/v1/delete
+    enabled: ${SSO_FLAG}
+    auth-server-url: http:${SSO_URL}/auth
+    realm: ${SSO_REALM}
+    resource: ${SSO_CLIENT_NAME}
+    #ssl-required: external
+    use-resource-role-mappings: true
+    public-client: true
+    credentials:
+      secret: ${SSO_CLIENT_SECRET}
+    securityConstraints:
+      - securityCollections:
+        - name: semi secured
+          patterns:
+              - /api/v1/person/*
+        authRoles:
+            - user
+            - admin 
+      - securityCollections:
+        - name: very secured
+          patterns:
+              - /api/v1/delete
+        authRoles:
+            - admin
   # Keycloak Enable CORS
-  cors: true
+    cors: true
   # If true, token contains only roles that are mapped for this client
   # If false, token will contain all roles available to user in realm
-  use-resource-role-mappings: false
+    ##use-resource-role-mappings: true/false
   # We don't define securityConstraints here because they are defined programmatically in MicroserviceSecurityConfiguration
 
