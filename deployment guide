@@ -1,0 +1,39 @@
+Step 1 - create a project
+
+oc new-project spring-demo
+
+Option 1 - using OpenShfit "new-app" to build and run
+
+# start the database pod
+oc new-app openshift/postgresql -e POSTGRESQL_USER=myuser -e POSTGRESQL_PASSWORD=mypass -e POSTGRESQL_DATABASE=demodb
+
+# Use S2I to build the application from source and run it in a pod on OpenShift
+oc new-app --name=demo  registry.access.redhat.com/redhat-openjdk-18/openjdk18-openshift~https://github.com/tommeramber/spring-boot-demo.git#with_postgresql -e DB_URL=postgresql -e DB_NAME=demodb -e DB_USERNAME=myuser -e DB_PASSWORD=mypass -e DB_PORT=5432
+
+# expose the route to the service
+oc expose svc/demo
+
+# after 2 pods are running (demo and postgresql), check the application
+curl http://$(oc get route/demo | awk '/demo/{print $2}')
+
+Option 2 - Using a Pre-built Application Image
+
+# One Time - create an image
+Option 2.A
+# Install Docker and download s2i from https://github.com/openshift/source-to-image/releases
+# replace mgreenbe with the name of your quay.io account
+s2i build https://github.com/tommeramber/spring-boot-demo.git#with_postgresql  registry.redhat.io/redhat-openjdk-18/openjdk18-openshift:latest quay.io/mgreenbe/springdemo:latest
+Option 2.B
+# Alternatively, if you want to build from the local directory run
+git clone git@github.com:tommeramber/spring-boot-demo.git
+git checkout with_postgresql
+s2i build . registry.redhat.io/redhat-openjdk-18/openjdk18-openshift:latest quay.io/mgreenbe/springdemo:latest
+# push the application image built to quay.io
+docker push quay.io/mgreenbe/springdemo:latest
+# from the quay.io repository settings page,  "Repository Visibility" to public
+
+# Create the database and application pods (replace value of APPLICATION_IMAGE with the image built above)
+oc process -p APPLICATION_IMAGE=quay.io/mgreenbe/springdemo:latest -f spring-boot-demo.yml | oc create -f -
+
+# after 2 pods are running (demo and postgresql), check the application
+curl http://$(oc get route/demo | awk '/demo/{print $2}')
